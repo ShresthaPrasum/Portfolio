@@ -331,21 +331,26 @@
         box-shadow: var(--shadow);
         overflow: hidden;
         transition: transform var(--transition-speed);
+        display: flex;
+        flex-direction: column;
       }
 
       .project-card:hover {
         transform: translateY(-5px);
       }
-
-      .project-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
+      
       .project-card .card-content {
         padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
       }
+
+      .project-card .card-content p {
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+      }
+
       .project-card h3 {
         color: var(--primary-color);
         margin-top: 0;
@@ -666,14 +671,14 @@
               <a href="#home" class="btn">View Project</a>
             </div>
           </div>
-          <!-- Coming Soon Card -->
+          <!-- Mama Quiz Card -->
           <div class="project-card">
             <div class="card-content">
-              <h3>Future Project</h3>
+              <h3>Mama Quiz</h3>
               <p>
-                Exciting new game development projects are in the works. Stay
-                tuned for updates!
+                Test your knowledge with this fun and interactive quiz app! Featuring a variety of categories and challenging questions, it's a great way to learn something new.
               </p>
+              <a href="https://mamaquiz.netlify.app/" target="_blank" class="btn">Take the Quiz</a>
             </div>
           </div>
         </div>
@@ -741,22 +746,22 @@
         <div class="social-icons">
           <a
             href="https://github.com/PYTHONVAMP7"
-            target="https://github.com/PYTHONVAMP7"
+            target="_blank"
             ><i class="fab fa-github"></i
           ></a>
           <a
             href="https://www.facebook.com/prasum.shrestha.2025/"
-            target="https://www.facebook.com/prasum.shrestha.2025/"
+            target="_blank"
             ><i class="fab fa-facebook"></i
           ></a>
           <a
             href="https://www.instagram.com/pronaldo_stha7/"
-            target="https://www.instagram.com/pronaldo_stha7/"
+            target="_blank"
             ><i class="fab fa-instagram"></i
           ></a>
           <a
             href="https://www.youtube.com/@KmicalFusion7"
-            target="https://www.youtube.com/@KmicalFusion7"
+            target="_blank"
             ><i class="fab fa-youtube"></i
           ></a>
         </div>
@@ -772,14 +777,18 @@
           method="POST"
           id="contact-form"
         >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            required
-          ></textarea>
+          <input type="text" id="name" name="name" placeholder="Your Name" required />
+          <input type="email" id="email" name="email" placeholder="Your Email" required />
+          <div class="message-container">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              required
+              maxlength="300"
+            ></textarea>
+            <span id="char-counter">300</span>
+          </div>
           <button type="submit" class="btn">Send Message</button>
         </form>
       </section>
@@ -905,46 +914,28 @@
           sectionObserver.observe(section);
         });
 
-        // --- ✉️ Contact Form Logic ---
+        // --- ✉️ Contact Form Logic (without JS validation for Formspree) ---
         const form = document.getElementById("contact-form");
+        form.addEventListener("submit", () => {
+            // Optional: Show a "submitting" message
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.textContent = "Sending...";
+            submitButton.disabled = true;
+        });
+
+
+        // --- Contact Form Char Counter ---
         const messageInput = document.getElementById("message");
         const charCounter = document.getElementById("char-counter");
-        const maxLength = messageInput.getAttribute("maxlength");
-
-        messageInput.addEventListener("input", () => {
-          const remaining = maxLength - messageInput.value.length;
-          charCounter.textContent = remaining;
-        });
-
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const name = document.getElementById("name").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const message = messageInput.value.trim();
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-          if (!name || !email || !message) {
-            showPopup("Please fill in all fields.", "error");
-            return;
-          }
-          if (!emailRegex.test(email)) {
-            showPopup("Please enter a valid email.", "error");
-            return;
-          }
-
-          showPopup("Message sent successfully!", "success");
-          form.reset();
-          charCounter.textContent = maxLength;
-        });
-
-        function showPopup(message, type) {
-          const popup = document.getElementById("popup-message");
-          popup.textContent = message;
-          popup.className = "popup show " + type;
-          setTimeout(() => {
-            popup.classList.remove("show");
-          }, 3000);
+        
+        if (messageInput && charCounter) {
+            const maxLength = messageInput.getAttribute("maxlength");
+            messageInput.addEventListener("input", () => {
+                const remaining = maxLength - messageInput.value.length;
+                charCounter.textContent = remaining;
+            });
         }
+
 
         // Add tooltips to skills
         skills.forEach((skill) => {
@@ -960,3 +951,4 @@
     </script>
   </body>
 </html>
+
