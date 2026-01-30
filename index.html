@@ -19,9 +19,10 @@
       --secondary-bg-color: #172b5d5e;
       --card-bg: #0d101b;
       --primary-color: rgb(195, 26, 26);
-      --border-color: #d1d5db82;
+      --border-color: #d1d5db2c;
       --text-primary: #fff;
       --text-secondary: #d8dfeb;
+      --grey: rgba(255, 255, 255, 0.185);
     }
     body{
       background-color: var(--bg-color);
@@ -277,6 +278,41 @@
       padding: 5rem;
       background-color: var(--secondary-bg-color);
     }
+    .project-container{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .project{
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+      border-radius: 15px;
+      padding: 1.5rem;
+      color: var(--text-primary);
+      gap: 1rem;
+
+    }
+    .project-tech span{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6px 15px;
+      border-radius: 8px;
+      background-color: var(--grey);
+    }
+    .project-link{
+      display: flex;
+      gap: 1rem;
+    }
+    .project-link a{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+      border-radius: 12px;
+      background-color: var(--primary-color);
+    }
   </style>
 </head>
 
@@ -394,6 +430,114 @@
     <div class="title">
       <h2>My Projects</h2>
     </div>
+    <div class="project-container">
+
+  <div class="project">
+    <h2>NevaEdu</h2>
+    <p>
+      An educational platform focused on structured learning resources,
+      concept clarity, and student-friendly explanations to support
+      academic growth.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Nessay AI</h3>
+    <p>
+      An AI-assisted writing platform designed to help users generate,
+      refine, and structure essays with clarity and logical coherence.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+      <span>AI</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Quiz Mama</h3>
+    <p>
+      A dynamic quiz-based web application offering interactive questions
+      across multiple domains to improve knowledge retention and engagement.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Woof Style</h3>
+    <p>
+      A modern dog-themed website showcasing different dog breeds, breed
+      information, Care Guides and a engaging quiz with woof style mode.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Spotify Clone</h3>
+    <p>
+      A frontend clone of Spotify featuring playlist layouts, music
+      controls, and a responsive interface inspired by the original platform.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <div class="project">
+    <h3>Personal Portfolio</h3>
+    <p>
+      A personal portfolio website showcasing projects, technical skills,
+      and growth as a developer through a clean and responsive design.
+    </p>
+    <div class="project-tech">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JS</span>
+    </div>
+    <div class="project-link">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+</div>
+
   </div>
 </div>
  
