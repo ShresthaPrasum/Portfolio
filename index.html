@@ -362,7 +362,7 @@
     }
     .contact-main{
       display: flex;
-      justify-content:space-around;
+      justify-content:space-evenly;
       gap: 4rem; 
       width: 100%;
     }
@@ -389,6 +389,28 @@
       flex-direction: column;
       gap: 0.6rem;
     }
+    .form{
+      width: 40%;
+    }
+    .input{
+      display: flex;
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 10px;
+      width: 100%;
+      color: var(--text-secondary);
+    }
+    .submit{
+      display: flex;
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 10px 5px;
+      width: 100%;
+      color: var(--text-secondary);
+    }
+
   </style>
 </head>
 
@@ -659,14 +681,11 @@
           </div>
         </div>
         <div class="form">
-          <form action="">
-            <label for="name">Name</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <input type="submit" value="Submit">
+          <form action="post">
+            <input type="text" id="name" name="name" placeholder="Your Name" class="input" required><br>
+            <input type="email" id="email" name="email" placeholder="Your Email" class="input" required><br>
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="input" required></textarea><br>
+            <input type="submit" value="Send Messages" style="width: 30%;" class="submit"> 
           </form>
         </div>
       </div>
