@@ -195,8 +195,8 @@
     .about-me{
       width: 100%;
       height: auto;
-      margin-top: 5rem;
-      padding-bottom: 5rem;
+      padding: 5rem;
+      background-color: var(--secondary-bg-color);
     }
     .container2{
       display: flex;
@@ -214,7 +214,7 @@
       color: var(--text-primary);
       border-bottom: 2px solid var(--primary-color);
       padding-bottom: 0.5rem;
-      margin-bottom: 100px;
+      margin-bottom: 60px;
     }
     .about{
       display: flex;
@@ -236,6 +236,46 @@
       width: 30%;
       gap: 2rem;
       font-size: large;
+    }
+    .education{
+      width: 100%;
+      padding: 5rem;
+    }
+    .timeline{
+      display: flex;
+      width: 50%;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      border-left: 2px solid var(--primary-color);
+    }
+    .timelines{
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      color: var(--text-primary);
+      background-color: var(--secondary-bg-color);
+      border-radius: 15px;
+      width: calc(100% - 60px);
+      padding: 2rem;
+      margin-left: 40px;
+      border: 1px solid var(--border-color);
+    }
+    .timelines h3{
+      color: var(--primary-color);
+    }
+    .circle{
+      width: 16px;
+      height: 16px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      position: absolute;
+      transform: translateX(-82px) translateY(-30px);
+    }
+    .projects{
+      width: 100%;
+      padding: 5rem;
+      background-color: var(--secondary-bg-color);
     }
   </style>
 </head>
@@ -317,6 +357,42 @@
         <h2>Skills</h2>
         <img src="image.png" alt="">
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="education">
+  <div class="container2">
+    <div class="title">
+      <h2>Education</h2>
+    </div>
+    <div class="timeline">
+      <div class="timelines">
+        <div class="circle"></div>
+        <h2>
+          Kalika Manavgyan Secondary School
+        </h2>
+        <h3>Middle - High School</h3>
+        <h4>2022 - present</h4>
+        <h4>I am currently studying in Grade 9 under the Technical Stream (Computer Engineering) and participating in various clubs.</h4>
+      </div>
+      <div class="timelines">
+        <div class="circle"></div>
+        <h2>
+          Gargi Academy
+        </h2>
+        <h3>Primary School</h3>
+        <h4>2015 - 2022</h4>
+        <h4>I studied in Nursery to Grade 6 in Gargi Academy and developed a strong foundation in academics and extracurricular activities.</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="projects">
+  <div class="container2">
+    <div class="title">
+      <h2>My Projects</h2>
     </div>
   </div>
 </div>
