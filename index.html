@@ -5,29 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
-  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    *{
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-    :root{
+
+    :root {
       --bg-color: #0c2351;
       --secondary-bg-color: #172b5d5e;
       --card-bg: #0d101b;
       --primary-color: rgb(195, 26, 26);
       --border-color: #d1d5db2c;
       --text-primary: #fff;
-      --text-secondary: #d8dfeb;
+      --text-secondary: #cbd5e1;
       --grey: rgba(255, 255, 255, 0.185);
     }
-    body{
+
+    body {
       background-color: var(--bg-color);
     }
-    .header{
+
+    .header {
       display: flex;
       top: 0;
       position: fixed;
@@ -41,7 +44,8 @@
       backdrop-filter: blur(20px);
       z-index: 999;
     }
-    .nav{
+
+    .nav {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -51,15 +55,17 @@
       width: auto;
       height: 60px;
     }
-    .logo{
+
+    .logo {
       font-size: 2rem;
       font-weight: 1000;
     }
 
-    a{
+    a {
       text-decoration: none;
       color: var(--text-primary);
     }
+
     .code-block {
       position: relative;
       width: 80%;
@@ -73,7 +79,8 @@
       font-family: "Courier New", monospace;
       font-size: 0.9rem;
     }
-    .home{
+
+    .home {
       display: flex;
       height: 60vh;
       flex-direction: row;
@@ -141,7 +148,8 @@
     .code-number {
       color: #005cc5;
     }
-    .container{
+
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -149,7 +157,8 @@
       height: max-content;
 
     }
-    .hero{
+
+    .hero {
       display: flex;
       max-width: 500px;
       flex-direction: column;
@@ -157,7 +166,8 @@
       font-weight: 1000;
       margin-left: 5%;
     }
-    .hero h1{
+
+    .hero h1 {
       display: flex;
       flex-direction: column;
       font-size: 3.5rem;
@@ -165,15 +175,18 @@
       margin-bottom: 1rem;
       line-height: 1.1;
     }
-    .hero span{
+
+    .hero span {
       color: var(--primary-color);
     }
-    .hero-btns{
+
+    .hero-btns {
       display: flex;
       gap: 1rem;
       margin-top: 1rem;
     }
-    .hero-btns button{
+
+    .hero-btns button {
       display: flex;
       background-color: var(--primary-color);
       color: var(--text-primary);
@@ -181,25 +194,29 @@
       border-radius: 15px;
       font-weight: bold;
     }
-    .social-medias{
+
+    .social-medias {
       display: flex;
       margin-top: 1rem;
       gap: 1rem;
     }
-    .social-medias a{
+
+    .social-medias a {
       gap: 1.5rem;
       font-size: 1.5rem;
       padding: 10px 15px;
       border-radius: 15px;
       background-color: black;
     }
-    .about-me{
+
+    .about-me {
       width: 100%;
       height: auto;
       padding: 5rem;
       background-color: var(--secondary-bg-color);
     }
-    .container2{
+
+    .container2 {
       display: flex;
       justify-content: center;
       flex-direction: column;
@@ -209,7 +226,7 @@
 
     }
 
-    .title h2{
+    .title h2 {
       font-size: 2.5rem;
       font-weight: 800;
       color: var(--text-primary);
@@ -217,32 +234,44 @@
       padding-bottom: 0.5rem;
       margin-bottom: 60px;
     }
-    .about{
+
+    .about {
       display: flex;
       justify-content: center;
+      font-family: "Poppins", sans-serif;
+
     }
-    .about-image{
+
+    .about-image {
       width: 35%;
     }
-    .about-image img{
+
+    .about-image img {
       width: 75%;
       border-radius: 15px;
       border: 2px solid rgba(113, 113, 113, 0.345);
     }
-    .about-text{
+
+    .about-text {
       display: flex;
       flex-direction: column;
-      color: var(--text-primary);
+      color: var(--text-secondary);
       height: 100%;
       width: 30%;
       gap: 2rem;
       font-size: large;
     }
-    .education{
+
+    .about-text h1 {
+      color: var(--text-primary);
+    }
+
+    .education {
       width: 100%;
       padding: 5rem;
     }
-    .timeline{
+
+    .timeline {
       display: flex;
       width: 50%;
       flex-direction: column;
@@ -250,7 +279,8 @@
       gap: 2rem;
       border-left: 2px solid var(--primary-color);
     }
-    .timelines{
+
+    .timelines {
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
@@ -262,10 +292,12 @@
       margin-left: 40px;
       border: 1px solid var(--border-color);
     }
-    .timelines h3{
+
+    .timelines h3 {
       color: var(--primary-color);
     }
-    .circle{
+
+    .circle {
       width: 16px;
       height: 16px;
       background: var(--primary-color);
@@ -273,27 +305,33 @@
       position: absolute;
       transform: translateX(-82px) translateY(-30px);
     }
-    .projects{
+
+    .projects {
       width: 100%;
       padding: 5rem;
       background-color: var(--secondary-bg-color);
     }
-    .project-container{
+
+    .project-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
-    .project{
+
+    .project {
       display: flex;
       flex-direction: column;
       border: 1px solid var(--border-color);
       border-radius: 15px;
       padding: 1.5rem;
+      padding-right: 2.3rem;
       color: var(--text-primary);
       gap: 1rem;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 
     }
-    .project-tech span{
+
+    .project-tech span {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -301,11 +339,13 @@
       border-radius: 8px;
       background-color: var(--grey);
     }
-    .project-link{
+
+    .project-link {
       display: flex;
       gap: 1rem;
     }
-    .project-link a{
+
+    .project-link a {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -324,222 +364,230 @@
       <a href="#">About</a>
       <a href="#">Education</a>
       <a href="#">Projects</a>
-      <a href="#">Achievements</a>
       <a href="#">Contact</a>
     </div>
   </div>
 
-<div class="home">
-  <div class="container">
-    <div class="code-block">
-      <div class="code-header">
-        <span class="code-dot"></span>
-        <span class="code-dot"></span>
-        <span class="code-dot"></span>
+  <div class="home">
+    <div class="container">
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+          <span class="code-dot"></span>
+        </div>
+        <div class="code-content">
+          <span class="code-line"><span class="code-keyword">#include</span>
+            <span class="code-string">&lt;stdio.h&gt;</span></span>
+          <span class="code-line"><span class="code-keyword">int</span>
+            <span class="code-function">main</span>( ) {</span>
+          <span class="code-line">
+            <span class="code-string">&nbsp;&nbsp;&nbsp;&nbsp;printf("Hello, I am Prasum Shrestha\n");</span>
+            <span class="code-line">
+              <span class="code-string">&nbsp;&nbsp;&nbsp;&nbsp;printf("Welcome to my portfolio!\n");</span>
+              <span class="code-line"></span>
+              <span class="code-line">
+                <span class="code-keyword">&nbsp;&nbsp;&nbsp;&nbsp;return</span>
+                <span class="code-number">0</span>;</span>
+              <span class="code-line">}</span>
+        </div>
       </div>
-      <div class="code-content">
-        <span class="code-line"><span class="code-keyword">#include</span>
-          <span class="code-string">&lt;stdio.h&gt;</span></span>
-        <span class="code-line"><span class="code-keyword">int</span>
-          <span class="code-function">main</span>( ) {</span>
-        <span class="code-line">
-          <span class="code-string">&nbsp;&nbsp;&nbsp;&nbsp;printf("Hello, I am Prasum Shrestha\n");</span>
-        <span class="code-line">
-          <span class="code-string">&nbsp;&nbsp;&nbsp;&nbsp;printf("Welcome to my portfolio!\n");</span>
-        <span class="code-line"></span>
-        <span class="code-line">
-          <span class="code-keyword">&nbsp;&nbsp;&nbsp;&nbsp;return</span>
-          <span class="code-number">0</span>;</span>
-        <span class="code-line">}</span>
-      </div>
-    </div>
-    <div class="hero">
-      <h1>
-        Hello, I'm 
-        <span>Prasum Shrestha</span></h1>
-      <h4>Begineer Polymath</h4>
-      <div class="hero-btns">
-        <button>Get In Touch</button>
-        <button>View My Works</button>
-      </div>
-      <div class="social-medias">
-        <a href="#"><i class="fab fa-x-twitter"></i></a> 
-        <a href="#"><i class="fab fa-github"></i></a> 
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="about-me">
-  <div class="container2">
-    <div class="title">
-      <h2>About Me</h2>
-    </div>
-    <div class="about">
-      <div class="about-image">
-        <img src="IMG_20150225_152910.jpg" alt="">
-      </div>
-      <div class="about-text">
+      <div class="hero">
         <h1>
-          Who am I?
+          Hello, I'm
+          <span>Prasum Shrestha</span>
         </h1>
-        <p>
-          I'm a teen high school student and tech enthusiast from Rupandehi, Nepal. I work with multiple programming languages and focus on building and learning new things.
-        </p>
-        <p>
-          I mostly work with Python and C++ for programming. I have built a great foundation in Web Development using HTML, CSS and Javascript. I was the second place winner under theming category in Daydream Global's game jam for my team's game Corpse Climber.
-        </p>
-        <h2>Skills</h2>
-        <img src="image.png" alt="">
+        <h4>Begineer Polymath</h4>
+        <div class="hero-btns">
+          <button>Get In Touch</button>
+          <button>View My Works</button>
+        </div>
+        <div class="social-medias">
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="education">
-  <div class="container2">
-    <div class="title">
-      <h2>Education</h2>
-    </div>
-    <div class="timeline">
-      <div class="timelines">
-        <div class="circle"></div>
-        <h2>
-          Kalika Manavgyan Secondary School
-        </h2>
-        <h3>Middle - High School</h3>
-        <h4>2022 - present</h4>
-        <h4>I am currently studying in Grade 9 under the Technical Stream (Computer Engineering) and participating in various clubs.</h4>
+  <div class="about-me">
+    <div class="container2">
+      <div class="title">
+        <h2>About Me</h2>
       </div>
-      <div class="timelines">
-        <div class="circle"></div>
-        <h2>
-          Gargi Academy
-        </h2>
-        <h3>Primary School</h3>
-        <h4>2015 - 2022</h4>
-        <h4>I studied in Nursery to Grade 6 in Gargi Academy and developed a strong foundation in academics and extracurricular activities.</h4>
+      <div class="about">
+        <div class="about-image">
+          <img src="IMG_20150225_152910.jpg" alt="">
+        </div>
+        <div class="about-text">
+          <h1>
+            Who am I?
+          </h1>
+          <p>
+            I'm a teen high school student and tech enthusiast from Rupandehi, Nepal. I work with multiple programming
+            languages and focus on building and learning new things.
+          </p>
+          <p>
+            I mostly work with Python and C++ for programming. I have built a great foundation in Web Development using
+            HTML, CSS and Javascript. I was the second place winner under theming category in Daydream Global's game jam
+            for my team's game Corpse Climber.
+          </p>
+          <h2>Skills</h2>
+          <img src="image.png" alt="">
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="projects">
-  <div class="container2">
-    <div class="title">
-      <h2>My Projects</h2>
-    </div>
-    <div class="project-container">
-
-  <div class="project">
-    <h2>NevaEdu</h2>
-    <p>
-      An educational platform focused on structured learning resources,
-      concept clarity, and student-friendly explanations to support
-      academic growth.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+  <div class="education">
+    <div class="container2">
+      <div class="title">
+        <h2>Education</h2>
+      </div>
+      <div class="timeline">
+        <div class="timelines">
+          <div class="circle"></div>
+          <h2>
+            Kalika Manavgyan Secondary School
+          </h2>
+          <h3>Middle - High School</h3>
+          <h4>2022 - present</h4>
+          <h4>I am currently studying in Grade 9 under the Technical Stream (Computer Engineering) and participating in
+            various clubs.</h4>
+        </div>
+        <div class="timelines">
+          <div class="circle"></div>
+          <h2>
+            Gargi Academy
+          </h2>
+          <h3>Primary School</h3>
+          <h4>2015 - 2022</h4>
+          <h4>I studied in Nursery to Grade 6 in Gargi Academy and developed a strong foundation in academics and
+            extracurricular activities.</h4>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="project">
-    <h3>Nessay AI</h3>
-    <p>
-      An AI-assisted writing platform designed to help users generate,
-      refine, and structure essays with clarity and logical coherence.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-      <span>AI</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
+  <div class="projects">
+    <div class="container2">
+      <div class="title">
+        <h2>My Projects</h2>
+      </div>
+      <div class="project-container">
+
+        <div class="project">
+          <h2>NevaEdu</h2>
+          <p>
+            An educational platform focused on structured learning resources,
+            concept clarity, and student-friendly explanations to support
+            academic growth.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Nessay AI</h2>
+          <p>
+            An AI-assisted writing platform designed to help users generate,
+            refine, and structure essays with clarity and logical coherence.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+            <span>AI</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Quiz Mama</h2>
+          <p>
+            A dynamic quiz-based web application offering interactive questions
+            across multiple domains to improve knowledge retention and engagement.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Woof Style</h2>
+          <p>
+            A modern dog-themed website showcasing different dog breeds, breed
+            information, Care Guides and a engaging quiz with woof style mode.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Spotify Clone</h2>
+          <p>
+            A frontend clone of Spotify featuring playlist layouts, music
+            controls, and a responsive interface inspired by the original platform.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h2>Personal Portfolio</h2>
+          <p>
+            A personal portfolio website showcasing projects, technical skills,
+            and growth as a developer through a clean and responsive design.
+          </p>
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JS</span>
+          </div>
+          <div class="project-link">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
-  <div class="project">
-    <h3>Quiz Mama</h3>
-    <p>
-      A dynamic quiz-based web application offering interactive questions
-      across multiple domains to improve knowledge retention and engagement.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </div>
-
-  <div class="project">
-    <h3>Woof Style</h3>
-    <p>
-      A modern dog-themed website showcasing different dog breeds, breed
-      information, Care Guides and a engaging quiz with woof style mode.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </div>
-
-  <div class="project">
-    <h3>Spotify Clone</h3>
-    <p>
-      A frontend clone of Spotify featuring playlist layouts, music
-      controls, and a responsive interface inspired by the original platform.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </div>
-
-  <div class="project">
-    <h3>Personal Portfolio</h3>
-    <p>
-      A personal portfolio website showcasing projects, technical skills,
-      and growth as a developer through a clean and responsive design.
-    </p>
-    <div class="project-tech">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JS</span>
-    </div>
-    <div class="project-link">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fas fa-external-link-alt"></i></a>
-    </div>
-  </div>
-
-</div>
+  <div class="contact">
 
   </div>
-</div>
- 
 </body>
+
 </html>
