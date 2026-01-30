@@ -403,11 +403,12 @@
     }
     .submit{
       display: flex;
-      background: none;
+      background-color: var(--primary-color);
       border: 1px solid var(--border-color);
       border-radius: 12px;
-      padding: 10px 5px;
-      width: 100%;
+      padding: 15px 10px;
+      width: 30%;
+      font-weight: bold;
       color: var(--text-secondary);
     }
 
@@ -685,7 +686,7 @@
             <input type="text" id="name" name="name" placeholder="Your Name" class="input" required><br>
             <input type="email" id="email" name="email" placeholder="Your Email" class="input" required><br>
             <textarea id="message" name="message" rows="4" placeholder="Your Message" class="input" required></textarea><br>
-            <input type="submit" value="Send Messages" style="width: 30%;" class="submit"> 
+            <input type="submit" value="Send Message" class="submit"> 
           </form>
         </div>
       </div>
