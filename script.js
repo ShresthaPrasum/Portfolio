@@ -29,7 +29,6 @@ function type() {
 }
 type();
 
-// --- ✨ NEW: Clock Function ---
 const timeEl = document.getElementById("time");
 const dateEl = document.getElementById("date");
 const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
