@@ -330,6 +330,9 @@
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 
     }
+    .project p{
+      color: var(--text-secondary);
+    }
 
     .project-tech span {
       display: inline-flex;
@@ -352,6 +355,39 @@
       padding: 12px;
       border-radius: 12px;
       background-color: var(--primary-color);
+    }
+    .contact{
+      width: 100%;
+      padding: 5rem;
+    }
+    .contact-main{
+      display: flex;
+      justify-content:space-around;
+      gap: 4rem; 
+      width: 100%;
+    }
+    .contact-info{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .contact-logo{
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: var(--primary-color);
+    }
+    .contact-infos{
+      display: flex;
+      color: white;
+      gap: 1.5rem;
+    }
+    .infos{
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
     }
   </style>
 </head>
@@ -586,7 +622,55 @@
   </div>
 
   <div class="contact">
+    <div class="container2">
+      <div class="title">
+        <h2>Contact Me</h2>
+      </div>
+      <div class="contact-main">
+        <div class="contact-info">
+          <div class="contact-infos">
+            <i class="fas fa-map-marker-alt contact-logo"></i>
+              <div class="infos">
+                <h3>Location</h3>
+                <h4>Rupandehi, Nepal</h4>
+              </div>
+          </div>
 
+          <div class="contact-infos">
+            <i class="fas fa-envelope contact-logo"></i>
+              <div class="infos">
+                <h3>Email</h3>
+                <h4>prasumshrestha8877@gmail.com</h4>
+              </div>
+          </div>
+          <div class="contact-infos">
+
+            <i class="fas fa-phone-alt contact-logo"></i>
+              <div class="infos">
+                <h3>Number</h3>
+                <h4>9812345678</h4>
+              </div>
+          </div>
+          <div class="social-medias">
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+
+          </div>
+        </div>
+        <div class="form">
+          <form action="">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br><br>
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 
