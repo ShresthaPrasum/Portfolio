@@ -24,6 +24,8 @@
       --text-primary: #fff;
       --text-secondary: #cbd5e1;
       --grey: rgba(255, 255, 255, 0.185);
+      --glow-inset: 0px;
+      --blur: 0px;
     }
 
     body {
@@ -61,17 +63,21 @@
       font-weight: 1000;
       animation: logo 2s infinite ease-in-out;
     }
+
     @keyframes logo {
-      0%{
+      0% {
         transform: translateY(0px);
       }
-      50%{
+
+      50% {
         transform: translateY(-5px);
       }
-      100%{
+
+      100% {
         transform: translateY(0px);
       }
     }
+
     a {
       text-decoration: none;
       color: var(--text-primary);
@@ -100,6 +106,7 @@
       gap: 1rem;
       margin-top: 200px;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      animation: starting 1s ease-in-out;
     }
 
     .code-header {
@@ -225,6 +232,8 @@
       height: auto;
       padding: 5rem;
       background-color: var(--secondary-bg-color);
+      animation: starting 1s ease-in-out;
+      animation-timeline: view(80% 5%);
     }
 
     .container2 {
@@ -291,7 +300,7 @@
       justify-content: center;
       gap: 2rem;
       border-left: 2px solid var(--primary-color);
-      
+
     }
 
     .timelines {
@@ -308,22 +317,38 @@
       animation-timeline: view(80% 5%);
 
     }
+
     @keyframes fadeIn {
-      0%{
+      0% {
         opacity: 0;
         transform: translateY(-200px);
       }
-      100%{
+
+      100% {
         opacity: 1;
         transform: translateY(0px);
       }
     }
+
     @keyframes fadeIn1 {
-      0%{
+      0% {
         opacity: 0;
         transform: translateY(200px);
       }
-      100%{
+
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes starting {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      100% {
         opacity: 1;
         transform: translateY(0px);
       }
@@ -357,60 +382,70 @@
     .project {
       display: flex;
       flex-direction: column;
+      height: 100%;
       border: 1px solid var(--border-color);
       border-radius: 15px;
       padding: 1.5rem;
       padding-right: 2.3rem;
       color: var(--text-primary);
       gap: 1rem;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      background-color: var(--bg-color);
+    }
+
+    .project-wrapper {
       transition: all 0.3s ease-in-out;
     }
-    .rgb{
-      content: "";
-      background: linear-gradient(
-        45deg,
-        #ff0000 0%,
-        #ff9a00 10%,
-        #d0de21 20%,
-        #4fdc4a 30%,
-        #3fdad8 40%,
-        #2fc9e2 50%,
-        #1c7fee 60%,
-        #5f15f2 70%,
-        #ba0cf8 80%,
-        #fb07d9 90%,
-        #ff0000 100%
-      );
-      inset: -10px;
+
+    .rgb {
       position: relative;
+    }
+
+    .rgb::after {
+      content: "";
+      background: linear-gradient(45deg,
+          #ff0000 0%,
+          #ff9a00 10%,
+          #d0de21 20%,
+          #4fdc4a 30%,
+          #3fdad8 40%,
+          #2fc9e2 50%,
+          #1c7fee 60%,
+          #5f15f2 70%,
+          #ba0cf8 80%,
+          #fb07d9 90%,
+          #ff0000 100%);
+      position: absolute;
       animation: backgroundposition 10s linear infinite;
-      background-size: 200% 200%;
-      filter: blur(10px);
+      background-size: 400% 400%;
+      filter: blur(var(--blur));
       border-radius: 12px;
-      z-index: -10;
+      z-index: -1;
+      inset: var(--glow-inset);
     }
 
     @keyframes backgroundposition {
       0% {
         background-position: 0% 50%;
       }
+
       50% {
         background-position: 100% 50%;
       }
-      100%{
+
+      100% {
         background-position: 0% 50%;
       }
     }
 
-    .project:hover{
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-
+    .project-wrapper:hover {
+      transform: scale(1.05);
     }
-    .project h2{
+
+    .project h2 {
       color: var(--primary-color);
     }
-    .project p{
+
+    .project p {
       color: var(--text-secondary);
     }
 
@@ -436,22 +471,26 @@
       border-radius: 12px;
       background-color: var(--primary-color);
     }
-    .contact{
+
+    .contact {
       width: 100%;
       padding: 5rem;
     }
-    .contact-main{
+
+    .contact-main {
       display: flex;
-      justify-content:space-evenly;
-      gap: 4rem; 
+      justify-content: space-evenly;
+      gap: 4rem;
       width: 100%;
     }
-    .contact-info{
+
+    .contact-info {
       display: flex;
       flex-direction: column;
       gap: 2rem;
     }
-    .contact-logo{
+
+    .contact-logo {
       display: inline-flex;
       justify-content: center;
       align-items: center;
@@ -459,20 +498,24 @@
       border-radius: 12px;
       background-color: var(--primary-color);
     }
-    .contact-infos{
+
+    .contact-infos {
       display: flex;
       color: white;
       gap: 1.5rem;
     }
-    .infos{
+
+    .infos {
       display: flex;
       flex-direction: column;
       gap: 0.6rem;
     }
-    .form{
+
+    .form {
       width: 40%;
     }
-    .input{
+
+    .input {
       display: flex;
       background: none;
       border: 1px solid var(--border-color);
@@ -481,7 +524,8 @@
       width: 100%;
       color: var(--text-secondary);
     }
-    .submit{
+
+    .submit {
       display: flex;
       background-color: var(--primary-color);
       border: 1px solid var(--border-color);
@@ -490,8 +534,46 @@
       width: 30%;
       font-weight: bold;
       color: var(--text-secondary);
+      transition: all 0.3s ease-in-out;
     }
 
+    .submit:hover {
+      scale: 1.05;
+      cursor: pointer;
+    }
+
+    @keyframes rainbow-shadow {
+      0% {
+        box-shadow: 0 0 20px red;
+      }
+
+      16% {
+        box-shadow: 0 0 20px orange;
+      }
+
+      33% {
+        box-shadow: 0 0 20px yellow;
+      }
+
+      50% {
+        box-shadow: 0 0 20px green;
+      }
+
+      66% {
+        box-shadow: 0 0 20px blue;
+      }
+
+      83% {
+        box-shadow: 0 0 20px indigo;
+      }
+
+      100% {
+        box-shadow: 0 0 20px aqua,;
+      }
+    }
+    a:hover{
+      animation: rainbow-shadow 5s ease-in-out infinite;
+    }
   </style>
 </head>
 
@@ -538,8 +620,8 @@
         </h1>
         <h4>Begineer Polymath</h4>
         <div class="hero-btns">
-          <button>Get In Touch</button>
-          <button>View My Works</button>
+          <button class="rgb">Get In Touch</button>
+          <button class="rgb">View My Works</button>
         </div>
         <div class="social-medias">
           <a href="https://x.com/PrasumShrestha"><i class="fab fa-x-twitter"></i></a>
@@ -563,16 +645,20 @@
           <h1>
             Who am I?
           </h1>
-            <p>
-              I am a high school student and technology enthusiast from Nepal with a strong interest in software development and
-              problem-solving. I enjoy exploring new tools, learning emerging technologies, and building practical digital
-              projects.
-            </p>
-            <p>
-              My primary focus is web development using HTML, CSS, and JavaScript, where I design responsive and interactive
-              interfaces. Alongside this, I work with different programming logic and game development concepts, and I continuously improve
-              my skills by building projects. In my free time I enjoy playing chess,listening musics, watching history documentaries, and overthinking about life.
-            </p>
+          <p>
+            I am a high school student and technology enthusiast from Nepal with a strong interest in software
+            development and
+            problem-solving. I enjoy exploring new tools, learning emerging technologies, and building practical digital
+            projects.
+          </p>
+          <p>
+            My primary focus is web development using HTML, CSS, and JavaScript, where I design responsive and
+            interactive
+            interfaces. Alongside this, I work with different programming logic and game development concepts, and I
+            continuously improve
+            my skills by building projects. In my free time I enjoy playing chess,listening musics, watching history
+            documentaries, and overthinking about life.
+          </p>
 
           <h2>Skills</h2>
           <img src="image.png" alt="">
@@ -617,108 +703,118 @@
         <h2>My Projects</h2>
       </div>
       <div class="project-container">
+        <div class="project-wrapper">
 
-        <div class="project">
-          <h2>NevaEdu</h2>
-          <p>
-            An educational platform focused on structured learning resources,
-            concept clarity, and student-friendly explanations to support
-            academic growth.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          <div class="project rgb">
+            <h2>NevaEdu</h2>
+            <p>
+              An educational platform focused on structured learning resources,
+              concept clarity, and student-friendly explanations to support
+              academic growth.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
+        <div class="project-wrapper">
 
-        <div class="project">
-          <h2>Nessay AI</h2>
-          <p class=" rgb">
-            An AI-assisted writing platform designed to help users generate,
-            refine, and structure essays with clarity and logical coherence.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-            <span>AI</span>
-          </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          <div class="project rgb">
+            <h2>Nessay AI</h2>
+            <p>
+              An AI-assisted writing platform designed to help users generate,
+              refine, and structure essays with clarity and logical coherence.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+              <span>AI</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
-
-        <div class="project">
-          <h2>Quiz Mama</h2>
-          <p>
-            A dynamic quiz-based web application offering interactive questions
-            across multiple domains to improve knowledge retention and engagement.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-
-        <div class="project">
-          <h2>Woof Style</h2>
-          <p>
-            A modern dog-themed website showcasing different dog breeds, breed
-            information, Care Guides and a engaging quiz with woof style mode.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+        <div class="project-wrapper">
+          <div class="project rgb">
+            <h2>Quiz Mama</h2>
+            <p>
+              A dynamic quiz-based web application offering interactive questions
+              across multiple domains to improve knowledge retention and engagement.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
+        <div class="project-wrapper">
 
-        <div class="project">
-          <h2>Spotify Clone</h2>
-          <p>
-            A frontend clone of Spotify featuring playlist layouts, music
-            controls, and a responsive interface inspired by the original platform.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+          <div class="project rgb">
+            <h2>Woof Style</h2>
+            <p>
+              A modern dog-themed website showcasing different dog breeds, breed
+              information, Care Guides and a engaging quiz with woof style mode.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
+        <div class="project-wrapper">
 
-        <div class="project">
-          <h2>Personal Portfolio</h2>
-          <p>
-            A personal portfolio website showcasing projects, technical skills,
-            and growth as a developer through a clean and responsive design.
-          </p>
-          <div class="project-tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
+          <div class="project rgb">
+            <h2>Spotify Clone</h2>
+            <p>
+              A frontend clone of Spotify featuring playlist layouts, music
+              controls, and a responsive interface inspired by the original platform.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
-          <div class="project-link">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="project-wrapper">
+          <div class="project rgb">
+            <h2>Personal Portfolio</h2>
+            <p>
+              A personal portfolio website showcasing projects, technical skills,
+              and growth as a developer through a clean and responsive design.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JS</span>
+            </div>
+            <div class="project-link">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
         </div>
 
@@ -734,26 +830,26 @@
         <div class="contact-info">
           <div class="contact-infos">
             <i class="fas fa-map-marker-alt contact-logo"></i>
-              <div class="infos">
-                <h3>Location</h3>
-                <h4>Rupandehi, Nepal</h4>
-              </div>
+            <div class="infos">
+              <h3>Location</h3>
+              <h4>Rupandehi, Nepal</h4>
+            </div>
           </div>
 
           <div class="contact-infos">
             <i class="fas fa-envelope contact-logo"></i>
-              <div class="infos">
-                <h3>Email</h3>
-                <h4>prasumshrestha8877@gmail.com</h4>
-              </div>
+            <div class="infos">
+              <h3>Email</h3>
+              <h4>prasumshrestha8877@gmail.com</h4>
+            </div>
           </div>
           <div class="contact-infos">
 
             <i class="fas fa-phone-alt contact-logo"></i>
-              <div class="infos">
-                <h3>Number</h3>
-                <h4>9812345678</h4>
-              </div>
+            <div class="infos">
+              <h3>Number</h3>
+              <h4>9812345678</h4>
+            </div>
           </div>
           <div class="social-medias">
             <a href="https://x.com/PrasumShrestha"><i class="fab fa-x-twitter"></i></a>
@@ -763,11 +859,12 @@
           </div>
         </div>
         <div class="form">
-          <form   action="https://formspree.io/f/xzdgwzzb" method="POST">
-            <input type="text" id="name" name="name" placeholder="Your Name" class="input" required><br>
+          <form action="https://formspree.io/f/xzdgwzzb" method="POST">
+            <input type="text" id="name" name="name" placeholder="Your Name" class="input rgb" required><br>
             <input type="email" id="email" name="email" placeholder="Your Email" class="input" required><br>
-            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="input" required></textarea><br>
-            <input type="submit" value="Send Message" class="submit"> 
+            <textarea id="message" name="message" rows="4" placeholder="Your Message" class="input"
+              required></textarea><br>
+            <input type="submit" value="Send Message" class="submit">
           </form>
         </div>
       </div>
