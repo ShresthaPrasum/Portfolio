@@ -59,8 +59,19 @@
     .logo {
       font-size: 2rem;
       font-weight: 1000;
+      animation: logo 2s infinite ease-in-out;
     }
-
+    @keyframes logo {
+      0%{
+        transform: translateY(0px);
+      }
+      50%{
+        transform: translateY(-5px);
+      }
+      100%{
+        transform: translateY(0px);
+      }
+    }
     a {
       text-decoration: none;
       color: var(--text-primary);
@@ -258,7 +269,7 @@
       color: var(--text-secondary);
       height: 100%;
       width: 30%;
-      gap: 2rem;
+      gap: 1.5rem;
       font-size: large;
     }
 
@@ -269,6 +280,8 @@
     .education {
       width: 100%;
       padding: 5rem;
+      animation: fadeIn both;
+      animation-timeline: view(80% 5%);
     }
 
     .timeline {
@@ -278,6 +291,7 @@
       justify-content: center;
       gap: 2rem;
       border-left: 2px solid var(--primary-color);
+      
     }
 
     .timelines {
@@ -285,12 +299,34 @@
       flex-direction: column;
       gap: 0.6rem;
       color: var(--text-primary);
-      background-color: var(--secondary-bg-color);
       border-radius: 15px;
       width: calc(100% - 60px);
       padding: 2rem;
       margin-left: 40px;
       border: 1px solid var(--border-color);
+      animation: fadeIn both;
+      animation-timeline: view(80% 5%);
+
+    }
+    @keyframes fadeIn {
+      0%{
+        opacity: 0;
+        transform: translateY(-200px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+    @keyframes fadeIn1 {
+      0%{
+        opacity: 0;
+        transform: translateY(200px);
+      }
+      100%{
+        opacity: 1;
+        transform: translateY(0px);
+      }
     }
 
     .timelines h3 {
@@ -328,7 +364,51 @@
       color: var(--text-primary);
       gap: 1rem;
       box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+    .rgb{
+      content: "";
+      background: linear-gradient(
+        45deg,
+        #ff0000 0%,
+        #ff9a00 10%,
+        #d0de21 20%,
+        #4fdc4a 30%,
+        #3fdad8 40%,
+        #2fc9e2 50%,
+        #1c7fee 60%,
+        #5f15f2 70%,
+        #ba0cf8 80%,
+        #fb07d9 90%,
+        #ff0000 100%
+      );
+      inset: -10px;
+      position: relative;
+      animation: backgroundposition 10s linear infinite;
+      background-size: 200% 200%;
+      filter: blur(10px);
+      border-radius: 12px;
+      z-index: -10;
+    }
 
+    @keyframes backgroundposition {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100%{
+        background-position: 0% 50%;
+      }
+    }
+
+    .project:hover{
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+    }
+    .project h2{
+      color: var(--primary-color);
     }
     .project p{
       color: var(--text-secondary);
@@ -462,9 +542,9 @@
           <button>View My Works</button>
         </div>
         <div class="social-medias">
-          <a href="#"><i class="fab fa-x-twitter"></i></a>
-          <a href="#"><i class="fab fa-github"></i></a>
-          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/PrasumShrestha"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://github.com/ShresthaPrasum"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/prasum-shrestha-929bb9397/"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -483,15 +563,17 @@
           <h1>
             Who am I?
           </h1>
-          <p>
-            I'm a teen high school student and tech enthusiast from Rupandehi, Nepal. I work with multiple programming
-            languages and focus on building and learning new things.
-          </p>
-          <p>
-            I mostly work with Python and C++ for programming. I have built a great foundation in Web Development using
-            HTML, CSS and Javascript. I was the second place winner under theming category in Daydream Global's game jam
-            for my team's game Corpse Climber.
-          </p>
+            <p>
+              I am a high school student and technology enthusiast from Nepal with a strong interest in software development and
+              problem-solving. I enjoy exploring new tools, learning emerging technologies, and building practical digital
+              projects.
+            </p>
+            <p>
+              My primary focus is web development using HTML, CSS, and JavaScript, where I design responsive and interactive
+              interfaces. Alongside this, I work with different programming logic and game development concepts, and I continuously improve
+              my skills by building projects. In my free time I enjoy playing chess,listening musics, watching history documentaries, and overthinking about life.
+            </p>
+
           <h2>Skills</h2>
           <img src="image.png" alt="">
         </div>
@@ -556,7 +638,7 @@
 
         <div class="project">
           <h2>Nessay AI</h2>
-          <p>
+          <p class=" rgb">
             An AI-assisted writing platform designed to help users generate,
             refine, and structure essays with clarity and logical coherence.
           </p>
@@ -643,7 +725,6 @@
       </div>
     </div>
   </div>
-
   <div class="contact">
     <div class="container2">
       <div class="title">
@@ -675,14 +756,14 @@
               </div>
           </div>
           <div class="social-medias">
-            <a href="#"><i class="fab fa-x-twitter"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/PrasumShrestha"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://github.com/ShresthaPrasum"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/prasum-shrestha-929bb9397/"><i class="fab fa-linkedin"></i></a>
 
           </div>
         </div>
         <div class="form">
-          <form action="post">
+          <form   action="https://formspree.io/f/xzdgwzzb" method="POST">
             <input type="text" id="name" name="name" placeholder="Your Name" class="input" required><br>
             <input type="email" id="email" name="email" placeholder="Your Email" class="input" required><br>
             <textarea id="message" name="message" rows="4" placeholder="Your Message" class="input" required></textarea><br>
@@ -692,6 +773,7 @@
       </div>
     </div>
   </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
