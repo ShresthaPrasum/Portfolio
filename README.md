@@ -60,19 +60,9 @@ Portfolio/
 
 ## 💻 Technology Stack
 
-- **HTML5**: Semantic markup and structure
-- **CSS3**: Modern styling with:
-  - CSS Grid and Flexbox for layout
-  - CSS Variables for color theming
-  - CSS Animations and Keyframes
-  - Gradient backgrounds and blur effects
-  - Backdrop filters for glassmorphism effects
-  - CSS View Timeline for scroll-triggered animations
-- **JavaScript**: Interactive functionality:
-  - Event listeners for hover effects
-  - CSS variable manipulation for dynamic styling
-  - Glow effect animations on project cards
-- **Font Awesome 6.5.1**: Icon library for social media and UI elements
+- **HTML5**
+- **CSS3**
+- **JavaScript**
 
 ## 🎯 Featured Projects
 
@@ -94,8 +84,6 @@ Portfolio/
 1. Clone or download this repository
 2. Navigate to the project folder
 3. Open `index.html` in your web browser, or better yet, serve with a local server:
-
-
 4. Open `http://localhost:8000` in your browser
 
 ## 🎮 Interactive Features
@@ -108,19 +96,7 @@ Portfolio/
 - **Responsive Buttons**: "Get In Touch" and "View My Works" buttons with interactive styling
 - **Contact Form**: Fully functional form using Formspree for email delivery
 
-## 🎨 Color Scheme
 
-- **Primary Background**: `#0c2351` (Dark Blue)
-- **Secondary Background**: `#172b5d5e` (Translucent Dark Blue)
-- **Card Background**: `#0d101b` (Darker Blue)
-- **Accent Color**: `rgb(195, 26, 26)` (Deep Red)
-- **Text Primary**: `#fff` (White)
-- **Text Secondary**: `#cbd5e1` (Light Gray)
-- **Border Color**: `#d1d5db2c` (Translucent Gray)
-
-## 📱 Responsive Breakpoints
-
-The website uses CSS Grid's `auto-fit` with `minmax()` for responsive project cards that automatically adjust from 1-4 columns based on screen size.
 
 ## 📧 Contact Information
 
@@ -150,13 +126,6 @@ The contact form is integrated with [Formspree](https://formspree.io) for email 
 2. Update the `action` attribute in the form element with your Formspree endpoint
 3. Users can now send you messages directly
 
-## 🌐 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## 📝 License
 
