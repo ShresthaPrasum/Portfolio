@@ -1,3 +1,5 @@
+//written by AI
+
 # Prasum Shrestha's Portfolio Website
 
 A modern, responsive personal portfolio website showcasing projects, education, and technical skills with an interactive design and gradient-based visual effects.
